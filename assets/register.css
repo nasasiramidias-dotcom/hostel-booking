@@ -1,0 +1,187 @@
+/* Register page CSS - Red/Yellow/Black/White professional theme */
+
+:root{
+  /* Softer red/yellow/black palette (less bright) */
+  --red:#b91c1c;        /* primary red (muted) */
+  --red-dark:#8b1515;   /* darker red for accents */
+  --yellow:#e0b73a;     /* warm yellow, toned down */
+  --yellow-light:#f5df9a;
+  --black:#0b0b0e;
+  --white:#ffffff;
+  --bg:#0b0b0e;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --border: rgba(0,0,0,.12);
+  --shadow: 0 20px 60px rgba(0,0,0,.22);
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background:
+    radial-gradient(900px 450px at 10% 15%, rgba(220,38,38,.25), transparent 55%),
+    radial-gradient(900px 500px at 90% 25%, rgba(234,179,8,.20), transparent 55%),
+    linear-gradient(180deg, #0a0a0d 0%, #101015 60%, #0a0a0d 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: 24px 16px;
+}
+
+.container{ width:100%; max-width: 760px; }
+
+
+.registration-form{
+  margin: 0 auto;
+  background: rgba(255,255,255,.92);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  overflow:hidden;
+}
+
+.registration-form header{
+  padding: 18px 18px 12px;
+}
+
+.registration-form h2{
+  color: var(--black);
+  font-size: 1.5rem;
+  font-weight: 850;
+
+  letter-spacing: -0.03em;
+  text-align:center;
+}
+
+.registration-form .sub{
+  margin-top: 8px;
+  text-align:center;
+  color: var(--muted);
+  font-weight: 650;
+}
+
+/* If existing markup uses h2 directly */
+.registration-form > h2{
+  padding: 28px 28px 18px;
+}
+
+.reg-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 0;
+}
+
+@media (max-width: 900px){
+  .reg-grid{ grid-template-columns: 1fr; }
+}
+
+.form-side{
+  padding: 22px 28px 28px;
+}
+
+/* Keep markup compatibility: .form-group, .btn-submit */
+.form-group{ margin-bottom: 18px; }
+
+.form-group label{
+  display:block;
+  margin-bottom: 8px;
+  font-weight: 800;
+  color: var(--black);
+  font-size: .95rem;
+}
+
+.form-group input{
+  width:100%;
+  padding: 10px 12px;
+
+  border-radius: 14px;
+  border: 2px solid rgba(0,0,0,.15);
+  background: #fff;
+  outline:none;
+  transition: all .2s ease;
+  font-size: 0.98rem;
+}
+
+.form-group input:focus{
+  border-color: rgba(220,38,38,.95);
+  box-shadow: 0 0 0 4px rgba(220,38,38,.12);
+  transform: translateY(-1px);
+}
+
+.password-hint{
+  display:block;
+  margin-top: 6px;
+  color: rgba(0,0,0,.65);
+  font-weight: 700;
+}
+
+.alert{
+  margin: 14px 28px 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  font-weight: 850;
+}
+
+.alert-success{
+  background: rgba(250,204,21,.16);
+  border-color: rgba(250,204,21,.55);
+  color: #a16207;
+}
+
+.alert-error{
+  background: rgba(220,38,38,.14);
+  border-color: rgba(220,38,38,.55);
+  color: var(--red);
+}
+
+.btn-submit{
+  width: 100%;
+  border:none;
+
+  cursor:pointer;
+  margin-top: 6px;
+  padding: 13px 18px;
+  border-radius: 14px;
+  font-weight: 950;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--red), var(--red-dark));
+  box-shadow: 0 14px 30px rgba(220,38,38,.30);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn-submit:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 20px 44px rgba(220,38,38,.42);
+}
+
+.login-link{
+  margin-top: 14px;
+  text-align:center;
+  color: rgba(0,0,0,.7);
+  font-weight: 700;
+}
+
+.login-link a{
+  color: var(--red-dark);
+  text-decoration:none;
+  border-bottom: 2px solid rgba(220,38,38,.35);
+  padding-bottom: 2px;
+}
+
+.login-link a:hover{
+  border-bottom-color: rgba(234,179,8,.9);
+}
+
+/* Improve mobile spacing */
+@media (max-width: 480px){
+  .registration-form{ border-radius: 18px; }
+  .form-side{ padding: 18px 16px 22px; }
+  .registration-form > h2{ padding: 20px 16px 12px; }
+  .alert{ margin-left: 16px; margin-right: 16px; }
+}
+
